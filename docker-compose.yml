@@ -1,0 +1,11 @@
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: client
+    ports: # A modifier pour le faire tourner sur un WSL en "80:80" / Pour l'instant a été lancé sur un machine Ubuntu locale
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
