@@ -1,10 +1,10 @@
 const path = require("path"); 
-require("dotenv").config({ path: path.resolve(__dirname, '../../.env') }); 
+require("dotenv").config({ path: path.resolve(__dirname, '../.env') }); 
 
 module.exports = {
     development: {
-        username: process.env.POSTGRES_USER, 
-        password: process.env.POSTGRES_PASSWORD,
+        username: (process.env.POSTGRES_USER), 
+        password: String(process.env.POSTGRES_PASSWORD),
         database: process.env.POSTGRES_DATABASE, 
         host: process.env.POSTGRES_HOST, 
         // Permet de communiquer avec la DB Postgres. Utiliser un autre dialecte si DB différente
@@ -16,7 +16,7 @@ module.exports = {
     production: {
         username: process.env.POSTGRES_USER, 
         password: process.env.POSTGRES_PASSWORD,
-        database: process.env.POSTGRES_DB, 
+        database: process.env.POSTGRES_DATABASE, 
         host: process.env.POSTGRES_HOST, 
         // Permet de communiquer avec la DB Postgres. Utiliser un autre dialecte si DB différente
         // de postgres

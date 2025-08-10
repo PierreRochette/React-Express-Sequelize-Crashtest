@@ -16,7 +16,11 @@ db.sequelize.sync()
     .catch((err) => { console.log(`Failed to sync database: ${err.message}`)}); 
 
 // Default route
-app.get("/", (req, res) => { res.json({ message: "Default route, test OK."})}); 
+app.get("/api/", (req, res) => { res.json({ message: "Default route, test OK."})}); 
+
+require("./routes/userRoutes")(app); 
 
 const PORT = process.env.API_PORT; 
-app.listen(PORT, () => { console.log(`Server is running on port ${5174}`)})
+app.listen(PORT, () => { console.log(`Server is running on port ${5174}`)}); 
+
+
