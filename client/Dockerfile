@@ -6,6 +6,11 @@ WORKDIR /app
 
 # Copie les fichiers nécessaires
 COPY package.json package-lock.json* ./
+
+ARG VITE_API_URL
+
+ENV VITE_API_URL ${VITE_API_URL}
+
 COPY vite.config.* ./
 COPY index.html ./
 COPY public ./public

@@ -1,15 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-import LoginForm from './components/forms/LoginForm';
 import HomePage from './pages/HomePage';
+import { AuthProvider } from './context/AuthContext';
+import SecondPage from './pages/SecondPage';
 
 function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path='/' element={<LoginForm />} />
-        <Route path='/page' element={<HomePage />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path="/page" element={<SecondPage />} />
+        </Routes>
+      </AuthProvider>
     </Router>
   )
 

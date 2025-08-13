@@ -3,7 +3,7 @@ const cors = require("cors");
 const path = require("path"); 
 require("dotenv").config({ path: path.resolve(__dirname, '.env')}); 
 const app = express(); 
-const CLIENT_URL= process.env.VITE_CLIENT_URL; 
+const CLIENT_URL= process.env.CLIENT_URL; 
 const CORPS_OPTIONS = {
     origin: CLIENT_URL, 
 }; 

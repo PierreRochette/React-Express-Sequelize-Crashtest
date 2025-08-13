@@ -38,6 +38,8 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL}
     networks:
       - app-network
     labels:
