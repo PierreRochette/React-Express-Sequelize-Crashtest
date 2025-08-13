@@ -44,6 +44,8 @@ services:
       - app-network
     labels:
       - "traefik.http.routers.client.rule=Host(`${HOST}`)"
+      - "traefik.http.routers.client.entrypoints=web"
+      - "traefik.http.services.client.loadbalancer.server.port=80"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
